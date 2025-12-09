@@ -32,7 +32,7 @@ def are_all_corners(red_tiles):
             all_corners = False
             break
     print(f'Are all red tiles corners: {all_corners}')
-#are_all_corners(input)
+are_all_corners(input)
 
 def list_largest_rectangles(red_tiles):
     list_of_rectangles = []
@@ -51,8 +51,7 @@ def all_edges(red_tiles):
         if x1-x2==0:
             edges.append(('x',x1,min(y1,y2),max(y1,y2)))
         else:
-            edges.append(('y',y1,min(x1,x2),max(x1,x2)))
-        
+            edges.append(('y',y1,min(x1,x2),max(x1,x2)))    
     return edges
 
 def largest_green_rectangle(red_tiles):
@@ -70,7 +69,7 @@ def largest_green_rectangle(red_tiles):
                     intersects = True
                     break
             else:
-                if (x_min < q < x_max or x_min < r < x_max or ((q <= x_min <= r and q <= x_max <= r))) and y_min < p < y_max:
+                if (x_min < q < x_max or x_min < r < x_max or (q <= x_min <= r and q <= x_max <= r)) and y_min < p < y_max:
                     intersects = True
                     break
         if not intersects:
